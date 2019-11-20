@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - tree
+  - coin1
+  - coin2
+  - coin3
+  - Coin
+  - Fulcrum
+  - Load
+  - Lever
+  - LandPlatform
+  - Pond
+  - platform
+  - KillerBIrd
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - others
+  - characters
+  - ground
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: background
+    uniqueID: 4025241239
+    locked: 0
+  - name: clouds
+    uniqueID: 870953095
+    locked: 0
+  - name: Mountain_Loop
+    uniqueID: 778955253
+    locked: 0
+  - name: houses
+    uniqueID: 995547561
+    locked: 0
+  - name: the ground
+    uniqueID: 4067313067
+    locked: 0
+  - name: character
+    uniqueID: 1146081833
+    locked: 0
+  - name: the front
+    uniqueID: 3147964431
+    locked: 0

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string id="txt"> Simple machine </string>
+  <string id="txt"> start </string>
+  <string id="txt"> Learn about simple machines. </string>
+  <string id="txt"> Next </string>
+  <string id="txt"> able to say the utilities of simple machines. </string>
+  <string id="txt"> Home </string>
+  <string id="txt"> Play </string>
+  <!-- lever texts  -->
+
+  <string id="sm_txt"> START </string>
+  <string id="sm_txt"> LEVELS </string>
+  <string id="IP"> INCLINED PLANE </string>
+  <string id="lev"> LEVER </string>
+
+  <string id="start"> START </string>
+  <string id="homeText"> Home </string>
+  <string id="replayText"> REPLAY </string>
+  <string id="helpText"> HELP </string>
+  <string id="coinText"> COINS : </string>
+  <string id="ClickWeightText"> Click on the weight to drop it to the other side of the lever. </string>
+  <string id="moveFulcrum"> Move the fulcrum to cross the river and obtain a coin.</string>
+  <string id="lever_help"> F1: Load &#xA; F2: Applied force &#xA; Farther is the fulcrum from the force applied, Higher is the force experienced by the load. </string>
+  <string id="lever_help_1"> Higher the weight on the effort side, higher is  the force experienced by the load.</string>
+  <string id="lever_help_2"> Nearer the fulcrum from the load, higher is  the force experienced by the load.</string>
+  <string id="EndMsg"> Woo Hoo! You have completed the challenges. &#xA; The number of coins you collected is: </string>
+  <string id="PondMessage">Uh oh! Try changing the position of fulcrum for load to experience more force.</string>
+  <string id="birdKillMessage">Oh no! beware of the angry killer birds.</string>
+  <string id="TreeMessage">Uh oh! How about using a bigger load to fly above the tree.</string>
+  <string id="okay">REPLAY</string>
+
+  <!-- Inclined plane-->
+  <string id="txt1">Hello, please drop Ram home with the energy he has left using the inclined planes in between. Use left and right arrow keys to move the characters.</string>
+  <string id="babbal">Ram's energy is over, please go back and use proper inclined plane to drop him home.</string>
+  <string id="text3">Thank you for dropping Ram home! You have collected all the coins and also used optimal inclined planes.</string>
+  <string id="text4">Please select the proper tool first!</string>
+  <string id="text5">Grandma: Please help me to go up there...</string>
+  <string id="text6">Grandma: Thank you for dropping me by. Go home safely.</string>
+  <string id="text7">You just collapsed into the wall. Try again!</string>
+  <string id="text8">You couldn't climb up to the wall. Try again!</string>
+  <string id="text9">The man doesn't have enough power to push you up. Try again!</string>
+  <string id="text10">You have fallen down. Try again!</string>
+  <string id="text11">Granny couldn't go up with only the rope, please use proper tool to go up. Try again!</string>
+  <string id="text12">Granny collided with the wall. Try again!</string>
+  <string id="text13">The boy couldn't land safely. Try again!</string>
+
+</strings>
+
+
+<!--
+<string id="chapterName"> Simple machine </string>
+<string id="start"> start </string>
+<string id="level"> level </string>
+<string id="home"> Home </string>
+<string id="play"> Play </string>
+-->

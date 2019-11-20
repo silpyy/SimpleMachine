@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string id="sm_txt"> सुरु  </string>
+  <string id="sm_txt"> स्तरहरू </string>
+  <string id="IP"> INCLINED PLANE </string>
+  <string id="lev"> LEVER </string>
+
+  <string id="TestText"> TestText_XMl </string>
+  <string id="ClickWeightText">लिभरको अर्को छेउमा ड्रप गर्न तौलमा क्लिक गर्नुहोस् ।</string>
+  <string id="moveFulcrum">    नदी पार गर्न सिक्का प्राप्त गर्न फुलक्रम सार्नुहोस्  ।</string>
+  <string id="lever_help">F1: लोड &#xA; F2: प्रयास तपाईले लागू गर्नुभयो &#xA; फुलक्रमबाट टाढा टाढाको प्रयास लागू गरियो, लोडले अनुभव गरेको बल अधिक छ।
+  </string>
+  <string id="lever_help_1"> प्रयास तौलमा अधिक वजन, अधिक भार द्वारा अनुभव गरिएको बल हो ।</string>
+  <string id="lever_help_2">टाढा फुलक्रम लोड भन्दा अधिक, बल द्वारा अनुभव गरिएको बल हो ।</string>
+  <string id="homeText"> घर </string>
+  <string id="replayText"> पुनः खेल्नुहोस् </string>
+  <string id="helpText"> मद्दत </string>
+  <string id="coinText"> सिक्का : </string>
+  <string id="EndMsg"> वू हू !!! तपाईंले यो चुनौती पूरा गर्नुभयो। &#xA; तपाईंले संकलन गर्नुभएको सिक्का संख्या हो:  </string>
+  <string id="okay"> पुनः खेल </string>
+
+
+  <string id="PondMessage">ओह! अधिक बल अनुभव गर्न लोडको लागि फुलक्रमको स्थिति परिवर्तन गर्न प्रयास गर्नुहोस्।</string>
+  <string id="birdKillMessage"> धत्तेरिका! क्रोधित हत्यारा पक्षीहरूदेखि सावधान रहनुहोस्।  </string>
+  <string id="TreeMessage">ओह! रूखको माथि उडान गर्न कसरी ठूलो लोड प्रयोग गर्ने बारेमा।</string>
+
+
+  <!-- Inclined plane-->
+  <string id="txt1">Hello, please drop Ram home with the energy he has left using the inclined planes in between. Use left and right arrow keys to move the characters.</string>
+  <string id="babbal">Ram's energy is over, please go back and use proper inclined plane to drop him home.</string>
+  <string id="text3">Thank you for dropping Ram home! You have collected all the coins and also used optimal inclined planes.</string>
+  <string id="text4">Please select the proper tool first!</string>
+  <string id="text5">Grandma: Please help me to go up there...</string>
+  <string id="text6">Grandma: Thank you for dropping me by. Go home safely.</string>
+  <string id="text7">You just collapsed into the wall. Try again!</string>
+  <string id="text8">You couldn't climb up to the wall. Try again!</string>
+  <string id="text9">The man doesn't have enough power to push you up. Try again!</string>
+  <string id="text10">You have fallen down. Try again!</string>
+  <string id="text11">Granny couldn't go up with only the rope, please use proper tool to go up. Try again!</string>
+  <string id="text12">Granny collided with the wall. Try again!</string>
+  <string id="text13">The boy couldn't land safely. Try again!</string>
+
+</strings>
+
+<!--
+<string id="chapterName">सरल यन्त्र </string>
+<string id="start">सुरु गर्नुहोस् </string>
+<string id="level"> स्तर </string>
+<string id="home">घर </string>
+<string id="play">खेल </string>
+
+
+<string id="txt">सरल यन्त्र </string>
+<string id="txt">सुरु गर्नुहोस् </string>
+<string id="txt"> सरल यन्त्र बारे सिक्न </string>
+<string id="txt"> अर्को </string>
+<string id="txt">विभिन्‍‍न किसिमका सरल यन्‍त्रको परिभाषा दिन। सरल यन्‍त्रहरुको पहिचान गर्न।</string>
+<string id="txt">घर </string>
+<string id="txt">खेल </string>
+
+-->

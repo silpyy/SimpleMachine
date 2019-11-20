@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <string id="sm_txt"> comienzo </string>
+  <string id="sm_txt"> niveles </string>
+  <string id="IP"> plano inclinado </string>
+  <string id="lev"> palanca </string>
+
+  <string id="TestText"> TestText_XMl </string>
+  <string id="ClickWeightText">    Haga clic en el peso para dejarlo caer al otro lado de la palanca.  </string>
+  <string id="moveFulcrum">    Mueve el fulcro para cruzar el río y obtener una moneda.  </string>
+  <string id="lever_help"> F1: Carga &#xA; F2: Esfuerzo que solicitas &#xA; Cuanto más lejos del fulcro se aplica el esfuerzo, mayor es la fuerza experimentada por la carga.
+  </string>
+  <string id="lever_help_1"> Cuanto mayor es el peso en el lado del esfuerzo, mayor es la fuerza experimentada por la carga </string>
+  <string id="lever_help_2"> Más lejos el fulcro de la carga, mayor es la fuerza experimentada por la carga. </string>
+  <string id="homeText"> CASA </string>
+  <string id="replayText"> REPETICION </string>
+  <string id="helpText"> AYUDA </string>
+  <string id="coinText"> MONEDAS : </string>
+  <string id="EndMsg"> Woo Hoo !!! Has completado este desafío.  &#xA; La cantidad de monedas que recolectó es: </string>
+  <string id="okay"> REPETICION </string>
+
+
+  <string id="PondMessage"> ¡UH oh! Intente cambiar la posición de fulcro para que la carga experimente más fuerza.  </string>
+  <string id="birdKillMessage"> ¡Oh no! cuidado con los pájaros asesinos enojados.</string>
+  <string id="TreeMessage">¡UH oh! ¿Qué tal usar una carga más grande para volar sobre el árbol? </string>
+
+  <!-- Inclined plane-->
+  <string id="txt1">Hola, por favor, deja a Ram en casa con la energía que le queda usando los planos inclinados en el medio. Use las teclas de flecha izquierda y derecha para mover los personajes.</string>
+  <string id="babbal">La energía de Ram se acabó, por favor regrese y use el plano inclinado adecuado para dejarlo en casa.</string>
+  <string id="text3"> ¡Gracias por dejar a Ram en casa! Has recogido todas las monedas y también has utilizado planos inclinados óptimos.</string>
+  <string id="text4">¡Seleccione la herramienta adecuada primero!</string>
+  <string id="text5">Abuela: Por favor, ayúdame a subir ...</string>
+  <string id="text6">Abuela: Gracias por visitarme. Vete a casa con seguridad.</string>
+  <string id="text7">Acabas de colapsar en la pared. ¡Inténtalo de nuevo!</string>
+  <string id="text8">No podías subir a la pared. ¡Inténtalo de nuevo!</string>
+  <string id="text9">El hombre no tiene suficiente poder para empujarte hacia arriba. ¡Inténtalo de nuevo!</string>
+  <string id="text10">Te has caído ¡Inténtalo de nuevo!</string>
+  <string id="text11">Granny couldn't go up with only the rope, please use proper tool to go up. Try again!</string>
+  <string id="text12">La abuelita no podía subir solo con la cuerda, usa la herramienta adecuada para subir. ¡Inténtalo de nuevo!</string>
+  <string id="text13">El niño no pudo aterrizar con seguridad. ¡Inténtalo de nuevo!</string>
+</strings>
+
+<!--
+&#xA; ===> for newline
+<string id="chapterName"> Simple machine </string>
+<string id="start"> start </string>
+<string id="level"> level </string>
+<string id="home"> Home </string>
+<string id="play"> Play </string>
+
+
+<string id="txt"> Maquina simple </string>
+<string id="txt"> start </string>
+<string id="txt"> Learn about simple machines. </string>
+<string id="txt"> Next </string>
+<string id="txt"> able to say the utilities of simple machines. </string>
+<string id="txt"> Home </string>
+<string id="txt"> Play </string>
+-->
