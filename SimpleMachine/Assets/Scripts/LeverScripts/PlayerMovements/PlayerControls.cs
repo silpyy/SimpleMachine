@@ -274,7 +274,7 @@ public class PlayerControls : MonoBehaviour
         //Time.timeScale = 0f;
         //yield return new WaitForSeconds(2f);
         //Debug.Log("coroutine's sec part");
-        loadscene.changemenuscene("SimpleMachinePrep");
+        loadscene.changemenuscene("Lever");
     }
     void ShowOptionsPanel()
     {

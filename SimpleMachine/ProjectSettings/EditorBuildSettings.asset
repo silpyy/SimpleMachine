@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Home.unity
     guid: 33d7fb49c6fb01d49b06f488997db97c
   - enabled: 1
-    path: Assets/Scenes/SimpleMachinePrep.unity
+    path: Assets/Scenes/Lever.unity
     guid: eda91f13ff1ed904d94540416c4115b4
   - enabled: 1
     path: Assets/Scenes/inclineplane.unity
