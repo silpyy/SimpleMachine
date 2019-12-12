@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class LanguageController : MonoBehaviour
 {
-    static string lang = "en";
+    static string lang = "np";
     public Text langName;
     public SelectLanguage selectlanguage;
     public XmlNodeList stringList;

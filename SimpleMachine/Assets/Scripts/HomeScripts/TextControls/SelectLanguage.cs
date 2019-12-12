@@ -7,7 +7,7 @@ public class SelectLanguage : MonoBehaviour
 {
     public Dropdown dropdown;
     List<string> languages = new List<string>() { "En", "Np", "Sp" };
-    public static string language = "en";
+    public static string language = "np";
     public string selectedLAnguage;
     void Start()
     {

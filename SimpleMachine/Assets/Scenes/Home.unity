@@ -3216,16 +3216,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 513462819}
     m_Modifications:
-    - target: {fileID: 9206118550814147010, guid: b57ee3e58f49a594389a2e1953bf766e,
-        type: 3}
-      propertyPath: m_Name
-      value: LevelPanelContainer
-      objectReference: {fileID: 0}
-    - target: {fileID: 9206118550814147010, guid: b57ee3e58f49a594389a2e1953bf766e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8397087779728838849, guid: b57ee3e58f49a594389a2e1953bf766e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3330,6 +3320,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206118550814147010, guid: b57ee3e58f49a594389a2e1953bf766e,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelPanelContainer
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206118550814147010, guid: b57ee3e58f49a594389a2e1953bf766e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4788338529402525280, guid: b57ee3e58f49a594389a2e1953bf766e,
         type: 3}

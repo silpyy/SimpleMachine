@@ -7,7 +7,7 @@ using UnityEngine.Networking;
 public class LoadXml : MonoBehaviour
 {
     //public string dataPath = "/strings/";
-    static string lang = "en";
+    static string lang = "np";
     public string pathToData;
     public XmlDocument data = new XmlDocument();
     void Start()
