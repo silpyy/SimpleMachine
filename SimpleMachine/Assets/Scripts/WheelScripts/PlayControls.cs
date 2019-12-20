@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayControls : MonoBehaviour
 {
-
+    public PlayControls playcontrol;
     //Scene reload
     private LoadScene manageScene;
     private LevelPanelControl _LPC;
     public static bool hasOverturned = false;
+
     public void Start()
     {
         manageScene = FindObjectOfType<LoadScene>();
@@ -17,10 +18,12 @@ public class PlayControls : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log("Triggered : " + collision.name);
-        if (collision.name == "Map" || collision.name == "Map (1)" || collision.name == "platform-detail-01")
+        string[] nameArr = collision.name.Split(' ');
+        Debug.Log(nameArr[0]);
+
+        if (nameArr[0] == "Map")
         {
-            //Debug.Log("Triggered_1");
+            Debug.Log("Triggered_1");
             hasOverturned = true;
             //_LPC.ShowObject();
             ScenesControl("WheelRace");

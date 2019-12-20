@@ -10,7 +10,7 @@ public class LevelPanelControl : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("call");
+        //Debug.Log("call");
         optnPanel = GameObject.Find("LevelPanelContainer");
         //Debug.Log(optnPanel);
         optnPanel.transform.GetChild(0).gameObject.SetActive(false);

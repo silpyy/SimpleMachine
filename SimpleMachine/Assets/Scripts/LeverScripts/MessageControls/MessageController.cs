@@ -23,7 +23,7 @@ public class MessageController : MonoBehaviour
         messageText = GameObject.Find("TextCanvas/MessageObject/Panel/Text")?.GetComponent<Text>();
         okayText = GameObject.Find("TextCanvas/MessageObject/Panel/OkayBtn/Text")?.GetComponent<Text>();
         //Debug.Log("Message Object: " + messageText);
-        okayText.text = data.SelectNodes("/strings/" + "string[@id='okay']")[0].InnerText.ToString();
+        //okayText.text = data.SelectNodes("/strings/" + "string[@id='okay']")[0].InnerText.ToString();
         //to hide its child components and show only when necessary
         transform.GetChild(0).gameObject.SetActive (false);
         transform.GetChild(0).GetChild(3).gameObject.SetActive (false);
@@ -50,10 +50,14 @@ public class MessageController : MonoBehaviour
         showHelpWithImg = true;
     }
 
-    public void ShowMessage(string messageId, bool showImg, bool showOKBtn)
+    public void ShowMessage(string messageId, bool showImg, bool showOKBtn, string okayTextId)
     {
+        Debug.Log(messageId);
         transform.GetChild(0).gameObject.SetActive(true);
+        //Debug.Log(data.SelectNodes("/strings/" + "string[@id='sqr_wheel']")[0].InnerText.ToString());
         string message = data.SelectNodes("/strings/" + "string[@id='" + messageId + "']")[0].InnerText.ToString();
+        //okayText.text = data.SelectNodes("/strings/" + "string[@id='okay']")[0].InnerText.ToString();
+        okayText.text = data.SelectNodes("/strings/" + "string[@id='"+ okayTextId + "']")[0].InnerText.ToString();
         messageText.text = message;
         transform.GetChild(0).GetChild(4).gameObject.SetActive(true);
     }

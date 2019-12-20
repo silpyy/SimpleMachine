@@ -6,7 +6,7 @@ public class LoadScene : MonoBehaviour
 {
 
     public void changemenuscene(string scenename) {
-        Debug.Log(scenename);
+        //Debug.Log(scenename);
             SceneManager.LoadScene(scenename);
             Time.timeScale = 1f;
         // Whatever you want it to do.

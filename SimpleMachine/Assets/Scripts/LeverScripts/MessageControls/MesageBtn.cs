@@ -9,7 +9,6 @@ public class MesageBtn : MonoBehaviour
 
     private void Start()
     {
-
         playerControl = FindObjectOfType<PlayerControls>();
     }
     public void HidePanel()
@@ -20,5 +19,11 @@ public class MesageBtn : MonoBehaviour
         {
             playerControl.KillPlayer();
         }
+    }
+
+    public void HidePanel_Wheel()
+    {
+        //Debug.Log("Btn click"+ transform.parent.parent.GetChild(0).name);
+        transform.parent.parent.gameObject.SetActive(false);
     }
 }
