@@ -41,6 +41,8 @@ public class MessageController : MonoBehaviour
         }
     }
 
+
+    //show the message with the image in the message section
     public void ShowMessage(string messageId, bool showImg)
     {
         transform.GetChild(0).gameObject.SetActive(true);
@@ -50,9 +52,12 @@ public class MessageController : MonoBehaviour
         showHelpWithImg = true;
     }
 
-    public void ShowMessage(string messageId, bool showImg, bool showOKBtn, string okayTextId)
+
+
+    //show the message with the image in the message section
+    public void ShowMessage(string messageId, bool showOKBtn, string okayTextId)
     {
-        Debug.Log(messageId);
+        //Debug.Log(messageId);
         transform.GetChild(0).gameObject.SetActive(true);
         //Debug.Log(data.SelectNodes("/strings/" + "string[@id='sqr_wheel']")[0].InnerText.ToString());
         string message = data.SelectNodes("/strings/" + "string[@id='" + messageId + "']")[0].InnerText.ToString();
@@ -60,6 +65,17 @@ public class MessageController : MonoBehaviour
         okayText.text = data.SelectNodes("/strings/" + "string[@id='"+ okayTextId + "']")[0].InnerText.ToString();
         messageText.text = message;
         transform.GetChild(0).GetChild(4).gameObject.SetActive(true);
+    }
+
+    //message that vanishes after sometimes
+    public void ShowVanishingMessage(string messageId)
+    {
+        transform.GetChild(0).GetChild(4).gameObject.SetActive(false); // hide the okay button
+        transform.GetChild(0).gameObject.SetActive(true);
+        string message = data.SelectNodes("/strings/" + "string[@id='" + messageId + "']")[0].InnerText.ToString();
+        //okayText.text = data.SelectNodes("/strings/" + "string[@id='" + okayTextId + "']")[0].InnerText.ToString();
+        messageText.text = message;
+        Invoke("ShowNoMessage", 3f);
     }
 
     public void ShowNoMessage()

@@ -222,7 +222,7 @@ public class PlayerControls : MonoBehaviour
                 shouldShowHelp = true;
                 if (scorecounter.GetScore() > 0)
                     scorecounter.SetSCore(-5);
-                messagecontrols.ShowMessage("PondMessage", false, true, "okay");
+                messagecontrols.ShowMessage("PondMessage", true, "okay");
                 playerAnimation.SetBool("ShouldSwim", true);
                 transform.localScale = new Vector2(1f, 1f);
                 playerAnimation.updateMode = AnimatorUpdateMode.UnscaledTime;
@@ -233,7 +233,7 @@ public class PlayerControls : MonoBehaviour
                 Debug.Log("KIller Bird");
                 if (scorecounter.GetScore() > 0)
                     scorecounter.SetSCore(-5);
-                messagecontrols.ShowMessage("birdKillMessage", false, true, "okay");
+                messagecontrols.ShowMessage("birdKillMessage", true, "okay");
                 playerAnimation.SetBool("IsDead", true);
                 playerAnimation.updateMode = AnimatorUpdateMode.UnscaledTime;
                 transform.localScale = new Vector2(3f, 3f);
@@ -245,7 +245,7 @@ public class PlayerControls : MonoBehaviour
                 shouldShowHelp = true;
                 if (scorecounter.GetScore() > 0)
                     scorecounter.SetSCore(-5);
-                messagecontrols.ShowMessage("TreeMessage", false, true, "okay");
+                messagecontrols.ShowMessage("TreeMessage", true, "okay");
                 playerAnimation.SetBool("IsStuck", true);
                 playerAnimation.updateMode = AnimatorUpdateMode.UnscaledTime;
                 //transform.localScale = new Vector2(4.5f, 4.5f);

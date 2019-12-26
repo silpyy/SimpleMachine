@@ -7,20 +7,20 @@ public class CarController : MonoBehaviour
 {
     //For healthbar
     [SerializeField] private HealthControl healthControl;
-    private float haealthSize = 1f;
+    private float healthSize = 1;
     private float healthDecVal;
 
     private AudioControls audioControl;
     private WheelJoint2D frontWheel;
     private WheelJoint2D backWheel;
+    private GameObject restartButton;
     private void Start()
     {
         audioControl = FindObjectOfType<AudioControls>();
-        //left to be refactored
         frontWheel = GameObject.Find("FrontTyre").GetComponent<WheelJoint2D>();
         backWheel = GameObject.Find("BackTyre").GetComponent<WheelJoint2D>();
-        Debug.Log(audioControl);
-
+        restartButton = GameObject.Find("RestartButton").transform.GetChild(0).gameObject;
+        restartButton.SetActive(false);
         if (RespawnControl.shouldRespwnInNewPos)
         {
             transform.position = new Vector3(RespawnControl.latestSpawnPoint.x, 18f, 0f);
@@ -28,29 +28,20 @@ public class CarController : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Debug.Log("Collision of car");
-        if (collision.collider.tag == "LandPlatform")
+        //destry and play audio if vehicle somesaults
+        if (collision.collider.tag == "LandPlatform" && gameObject.tag == "KillerBIrd")
         {
             WheelController.hasCrashed = true;
-            Debug.Log("car crashed");
             frontWheel.enabled = false;
             backWheel.enabled = false;
             audioControl.playAudios("crash");
+            restartButton.SetActive(true);
         }
-    }
-
-    private void HealthControl()
-    {
-        //Debug.Log(healthDecVal);
-        haealthSize -= healthDecVal;
-        if (haealthSize > 0)
+        else if(collision.collider.tag == "LandPlatform")
         {
-            healthControl.SetSize(haealthSize);
+            audioControl.playAudios("crash");
         }
     }
-
-
-
 }
 
 

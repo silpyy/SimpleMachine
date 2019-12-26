@@ -24,8 +24,6 @@ public class AudioControls : MonoBehaviour
         {
             case "forward":
                 audioSource.clip = moveCar;
-                //if (!audioSource.isPlaying)
-                    //audioSource.Play();
                 break;
             case "backward":
                 audioSource.clip = brake;

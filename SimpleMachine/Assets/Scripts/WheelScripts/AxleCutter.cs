@@ -9,12 +9,12 @@ public class AxleCutter : MonoBehaviour
     private bool moveUp = false;
     private void Start()
     {
-        initialPosition = gameObject.transform.position;
+        //initialPosition = gameObject.transform.position;
         Invoke("MoveUp", 1f);
     }
     private void Update()
     {
-        curPosition = gameObject.transform.position;
+        //curPosition = gameObject.transform.position;
         
     }
 

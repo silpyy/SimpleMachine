@@ -7,14 +7,14 @@ public class WheelController : MonoBehaviour
 {
     private GameObject frontTyre;
     private GameObject backTyre;
-    private GameObject hill;
+    [SerializeField] private GameObject hill;
     private int currentTyreNum = 0;
     [SerializeField] private WheelJoint2D wheelJoint;
     private JointMotor2D wheelMotor;
 
-    private BoxCollider2D wheelBoxCollider;
+    //private BoxCollider2D wheelBoxCollider;
     private CircleCollider2D wheelCircleCollider;
-    private PolygonCollider2D hillCollider;
+    private EdgeCollider2D slipperyHillCollider;
 
     private SpriteRenderer wheelSprite;
 
@@ -29,8 +29,8 @@ public class WheelController : MonoBehaviour
     };
     private Dictionary<string, float> tyreColRadius = new Dictionary<string, float>()
     {
-        {"tyre_1", 0.45f },
-        {"tyre_2", 1f },
+        {"tyre_1", 1.6f },
+        {"tyre_2", 3.1f },
         {"tyre_3", .2f },
         {"tyre_4", .2f }
     };
@@ -41,17 +41,27 @@ public class WheelController : MonoBehaviour
         {"tyre_3", "polygonCol"},
         {"tyre_4", "polygonCol"}
     };
+    private Dictionary<string, float> healthDecStat = new Dictionary<string, float>()
+    {
+        {"tyre_1", .00001f},
+        {"tyre_2", .00002f},
+        {"tyre_3", .001f},
+        {"tyre_4", .001f}
+    };
 
     private int tyreCount;
     private float speedControlVar;
     private float speed = 1000f;
+    public float currentheathDecVal;
 
-    public AudioControls audioControl;
+    public AudioControls audioControl; 
     public static bool hasCrashed = false;
 
 
     private MessageController messageControls;
     private bool isMessageOn = false;
+    public float healthSize = 1;
+    private HealthControl healthControl;
 
 
     private void Start()
@@ -61,15 +71,21 @@ public class WheelController : MonoBehaviour
         wheelMotor = gameObject.GetComponent<WheelJoint2D>().motor;
         wheelSprite = gameObject.GetComponent<SpriteRenderer>();
         wheelCircleCollider = gameObject.GetComponent<CircleCollider2D>();
-        wheelBoxCollider = gameObject.GetComponent<BoxCollider2D>();
-        hill = GameObject.Find("Map (1)");
-        hillCollider = hill.GetComponent<PolygonCollider2D>();
+        //wheelBoxCollider = gameObject.GetComponent<BoxCollider2D>();
+        //wheelBoxCollider.enabled = false;
+
+
+        healthControl = FindObjectOfType<HealthControl>();
+        //hill = GameObject.Find("Map (1)");
+        slipperyHillCollider = hill.GetComponent<EdgeCollider2D>();
 
         notSlipperyMaterial = (PhysicsMaterial2D)Resources.Load("Materials/HillNotSlippery");
         slipperyMaterial = (PhysicsMaterial2D)Resources.Load("Materials/SlipperyHill");
         audioControl = FindObjectOfType<AudioControls>();
         messageControls = FindObjectOfType<MessageController>();
         hasCrashed = false;
+
+        currentheathDecVal = (float)healthDecStat["tyre_" + (currentTyreNum+1)];
     }
 
     private void Update()
@@ -90,12 +106,13 @@ public class WheelController : MonoBehaviour
 
         if (!isMessageOn)
         {
-            messageControls.ShowMessage("wheelIntro", false, true, "okay_wheel");
+            messageControls.ShowMessage("wheelIntro", true, "okay_wheel");
             isMessageOn = true;
         }
 
     }
 
+    //set the motor speed that makes the vehicle move
     private void SetMotorSpeed()
     {
         if(speedControlVar > 0)
@@ -104,6 +121,8 @@ public class WheelController : MonoBehaviour
             speed = speed < 0 ? speed + (float)((3.6 * 200 * 2) / (2f * 9.55f)) :
                     speed < 2200 ? speed + (float)((3.6 * 25 * 2) / (2f * 9.55f)) :
                     2200;
+            HealthControl();
+            HideFirstMessage();
         }
         else if(speedControlVar < 0)
         {
@@ -111,13 +130,15 @@ public class WheelController : MonoBehaviour
             speed = speed > 0 ? speed - (float)((3.6 * 200 * 2) / (2f * 9.55f)) :
                     speed > -1500 ? speed - (float)((3.6 * 25 * 2) / (2f * 9.55f)) :
                     -1500;
+            HealthControl();
+            HideFirstMessage();
         }
         else
         {
-            speed = speed > 100 ? speed - (float)((3.6 * 100 * 2) / (2f * 9.55f)) :
-                    speed < -100 ? speed + (float)((3.6 * 100 * 2) / (2f * 9.55f)) :
-                    0;
-            audioControl.StopAudio();
+             speed = speed > 100 ? speed - (float)((3.6 * 50 * 2) / (2f * 9.55f)) :
+                     speed < -100 ? speed + (float)((3.6 * 50 * 2) / (2f * 9.55f)) :
+                     0;
+             audioControl.StopAudio();
         }
         wheelMotor.motorSpeed = speed;
         wheelJoint.motor = wheelMotor;
@@ -155,27 +176,32 @@ public class WheelController : MonoBehaviour
         string colliderName = tyreColliderType[tyreName];
         manageTyreColliders(tyreName, colliderName);
         ManageMaterials(currentTyreNum);
-        if(currentTyreNum > 2)
+        currentheathDecVal = (float)healthDecStat["tyre_" + currentTyreNum];
+        if (currentTyreNum > 2)
         {
-            messageControls.ShowMessage("sqr_wheel", false, true, "okay_wheel");
+            //messageControls.ShowMessage("sqr_wheel", true, "okay_wheel");
+            messageControls.ShowVanishingMessage("sqr_wheel");
         }
     }
 
-
+    
+    //set material for the slippery road
     private void ManageMaterials(int currentTyreNum)
     {
+        Debug.Log(currentTyreNum);
         switch (currentTyreNum)
         {
             case 2:
-                hillCollider.sharedMaterial = notSlipperyMaterial;
+                slipperyHillCollider.sharedMaterial = notSlipperyMaterial;
                 break;
             default:
-                hillCollider.sharedMaterial = slipperyMaterial;
+                slipperyHillCollider.sharedMaterial = slipperyMaterial;
                 break;
         }
     }
 
 
+    //set colliders according to the changig tyres
     private void manageTyreColliders(string tyreName, string colliderName)
     {
         switch (colliderName)
@@ -183,7 +209,12 @@ public class WheelController : MonoBehaviour
             case "circleCol":
 
                 wheelCircleCollider.enabled = true;
-                wheelBoxCollider.enabled = false;
+                //wheelBoxCollider.enabled = false;
+                var polygonCollider = gameObject.GetComponent<PolygonCollider2D>();
+                if (polygonCollider != null)
+                {
+                    Destroy(polygonCollider);
+                }
 
                 wheelCircleCollider.radius = tyreColRadius[tyreName];
                // messageControls.ShowNoMessage();
@@ -193,7 +224,7 @@ public class WheelController : MonoBehaviour
                 //messageControls.ShowMessage("sqr_wheel", false, true, "okay_wheel");
 
                 wheelCircleCollider.enabled = false;
-                wheelBoxCollider.enabled = false;
+                //wheelBoxCollider.enabled = false;
 
                 //if gameobject has polyygoncollider remove it and add another polygoncollider to match the objectshape else just add one.
                 if(gameObject.GetComponent<PolygonCollider2D>() != null)
@@ -210,13 +241,25 @@ public class WheelController : MonoBehaviour
         }
     }
 
+
+    private void HealthControl()
+    {
+        healthSize -= currentheathDecVal;
+        //Debug.Log(healthSize);
+        if (healthSize > 0)
+        {
+            healthControl.SetSize(healthSize);
+        }
+    }
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.tag == "KillerBIrd")
         {
             hasCrashed = true;
             audioControl.playAudios("cutAxle");
-            messageControls.ShowMessage("cutAxleResponse", false, true, "okay_wheel");
+            messageControls.ShowMessage("cutAxleResponse", true, "okay_wheel");
             if (gameObject.GetComponent<WheelJoint2D>() != null)
             {
                 gameObject.GetComponent<WheelJoint2D>().enabled = false;
@@ -224,4 +267,13 @@ public class WheelController : MonoBehaviour
         }
     }
 
+
+    private void HideFirstMessage()
+    {
+        if (!isMessageOn)
+        {
+            messageControls.ShowNoMessage();
+            isMessageOn = true;
+        }
+    }
 }

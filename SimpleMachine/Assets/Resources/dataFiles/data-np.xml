@@ -47,7 +47,7 @@
    Use right (&#x2192;) and  left arrows (&#x2190;) to move the vehicle.</string>
   
   <string id="okay_wheel"> हुन्छ </string>
-  <string id="sqr_wheel">Tyres that are not circular have edges that dig into the road which makes the movement slower and uses excessive energy.</string>
+  <string id="sqr_wheel">Tyres that are not circular have edges that dig into the road which makes the movement unstable and uses excessive energy.</string>
   <string id="cutAxleResponse">Oh no !! Next time be aware of the axle cutters.</string>
 
 
