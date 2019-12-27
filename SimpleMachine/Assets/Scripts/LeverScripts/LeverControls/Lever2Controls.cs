@@ -118,7 +118,6 @@ public class Lever2Controls : MonoBehaviour
             messagecontrol.ShowMessage("moveFulcrum", true);
 
             player.transform.position = new Vector3(214f, player.transform.position.y, -1);
-            Debug.Log(player.transform.position);
 
             load.GetComponent<Renderer>().enabled = true;
 
@@ -223,7 +222,6 @@ public class Lever2Controls : MonoBehaviour
         else if (fulcrumPosOffset < 0)
         {
             int  changeMagnitude = (int)fulcrumPosOffset;
-            Debug.Log("ChangeMag lt: " + changeMagnitude);
             if(changeMagnitude > -2)
             {
                 areaeffector.forceAngle = 40;

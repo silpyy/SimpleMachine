@@ -20,33 +20,33 @@ public class WheelController : MonoBehaviour
 
     private PhysicsMaterial2D slipperyMaterial;
     private PhysicsMaterial2D notSlipperyMaterial;
-
-    private Dictionary<string, int> TyreSpecs = new Dictionary<string, int>() {
-        { "tyre_1", 1200},
-        { "tyre_2", 1000},
-        { "tyre_3", 200},
-        { "tyre_4", 100}
+    private Dictionary<string, int> tyreAchievableSpeed = new Dictionary<string, int>()
+    {
+        {"tyre_1", 1000 },
+        {"tyre_2", 2200 },//1.6f
+        {"tyre_3", 1000 },
+        {"tyre_4", 2200 }
     };
     private Dictionary<string, float> tyreColRadius = new Dictionary<string, float>()
     {
         {"tyre_1", 1.6f },
-        {"tyre_2", 3.1f },
+        {"tyre_2", 1.6f },//1.6f
         {"tyre_3", .2f },
-        {"tyre_4", .2f }
+        {"tyre_4", 3.1f }
     };
     private Dictionary<string, string> tyreColliderType = new Dictionary<string, string>()
     {
-        {"tyre_1", "circleCol"},
+        {"tyre_1", "polygonCol"},
         {"tyre_2", "circleCol"},
         {"tyre_3", "polygonCol"},
-        {"tyre_4", "polygonCol"}
+        {"tyre_4", "circleCol"}
     };
     private Dictionary<string, float> healthDecStat = new Dictionary<string, float>()
     {
         {"tyre_1", .00001f},
-        {"tyre_2", .00002f},
+        {"tyre_2", .00001f},//.00001f
         {"tyre_3", .001f},
-        {"tyre_4", .001f}
+        {"tyre_4", .00002f}
     };
 
     private int tyreCount;
@@ -59,14 +59,15 @@ public class WheelController : MonoBehaviour
 
 
     private MessageController messageControls;
-    private bool isMessageOn = false;
+    private bool isMessageShown = false;
     public float healthSize = 1;
     private HealthControl healthControl;
+    private CarController carcontrol;
 
 
     private void Start()
     {
-        tyreCount = TyreSpecs.Count;
+        tyreCount = tyreColRadius.Count;
         wheelJoint = gameObject.GetComponent<WheelJoint2D>();
         wheelMotor = gameObject.GetComponent<WheelJoint2D>().motor;
         wheelSprite = gameObject.GetComponent<SpriteRenderer>();
@@ -76,6 +77,7 @@ public class WheelController : MonoBehaviour
 
 
         healthControl = FindObjectOfType<HealthControl>();
+        carcontrol = FindObjectOfType<CarController>();
         //hill = GameObject.Find("Map (1)");
         slipperyHillCollider = hill.GetComponent<EdgeCollider2D>();
 
@@ -86,8 +88,10 @@ public class WheelController : MonoBehaviour
         hasCrashed = false;
 
         currentheathDecVal = (float)healthDecStat["tyre_" + (currentTyreNum+1)];
+
     }
 
+    
     private void Update()
     {
         speedControlVar = Input.GetAxis("Horizontal");
@@ -104,10 +108,10 @@ public class WheelController : MonoBehaviour
             wheelJoint.motor = wheelMotor;
         }
 
-        if (!isMessageOn)
+        if (!isMessageShown)
         {
             messageControls.ShowMessage("wheelIntro", true, "okay_wheel");
-            isMessageOn = true;
+            isMessageShown = true;
         }
 
     }
@@ -119,10 +123,10 @@ public class WheelController : MonoBehaviour
         {
             audioControl.playAudios("forward");
             speed = speed < 0 ? speed + (float)((3.6 * 200 * 2) / (2f * 9.55f)) :
-                    speed < 2200 ? speed + (float)((3.6 * 25 * 2) / (2f * 9.55f)) :
-                    2200;
+                    speed < tyreAchievableSpeed["tyre_" + (currentTyreNum + 1)] ? speed + (float)((3.6 * 25 * 2) / (2f * 9.55f)) :
+                    tyreAchievableSpeed["tyre_" + (currentTyreNum+1) ];
             HealthControl();
-            HideFirstMessage();
+            HideMessage();
         }
         else if(speedControlVar < 0)
         {
@@ -131,7 +135,7 @@ public class WheelController : MonoBehaviour
                     speed > -1500 ? speed - (float)((3.6 * 25 * 2) / (2f * 9.55f)) :
                     -1500;
             HealthControl();
-            HideFirstMessage();
+            HideMessage();
         }
         else
         {
@@ -188,10 +192,9 @@ public class WheelController : MonoBehaviour
     //set material for the slippery road
     private void ManageMaterials(int currentTyreNum)
     {
-        Debug.Log(currentTyreNum);
         switch (currentTyreNum)
         {
-            case 2:
+            case 4:
                 slipperyHillCollider.sharedMaterial = notSlipperyMaterial;
                 break;
             default:
@@ -260,6 +263,7 @@ public class WheelController : MonoBehaviour
             hasCrashed = true;
             audioControl.playAudios("cutAxle");
             messageControls.ShowMessage("cutAxleResponse", true, "okay_wheel");
+            carcontrol.ShowRestartBtn();
             if (gameObject.GetComponent<WheelJoint2D>() != null)
             {
                 gameObject.GetComponent<WheelJoint2D>().enabled = false;
@@ -268,12 +272,12 @@ public class WheelController : MonoBehaviour
     }
 
 
-    private void HideFirstMessage()
+    public void HideMessage()
     {
-        if (!isMessageOn)
-        {
+        //if (!isMessageOn)
+        //{
             messageControls.ShowNoMessage();
-            isMessageOn = true;
-        }
+            isMessageShown = true;
+        //}
     }
 }

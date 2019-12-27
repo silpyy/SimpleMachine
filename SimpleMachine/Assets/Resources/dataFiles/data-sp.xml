@@ -16,7 +16,7 @@
   <string id="replayText"> REPETICION </string>
   <string id="helpText"> AYUDA </string>
   <string id="coinText"> MONEDAS : </string>
-  <string id="EndMsg"> Woo Hoo !!! Has completado este desafío.  &#xA; La cantidad de monedas que recolectó es: </string>
+  <string id="EndMsg"> Woo Hoo !!! Has completado este desafío.</string>
   <string id="okay"> REPETICION </string>
 
 
@@ -39,6 +39,19 @@
   <string id="text12">La abuelita no podía subir solo con la cuerda, usa la herramienta adecuada para subir. ¡Inténtalo de nuevo!</string>
   <string id="text13">El niño no pudo aterrizar con seguridad. ¡Inténtalo de nuevo!</string>
 </strings>
+
+<!-- Wheel-->
+<string id="changeTyre">Try changing tyres with chains to get friction.</string>
+
+<string id="wheelIntro">
+  Change the tyre suitable for the track using up arrow (&#x2191;) and down arrow (&#x2193;) or scrolling the mouse wheel.
+  Use right (&#x2192;) and  left arrows (&#x2190;) to move the vehicle.
+</string>
+
+<string id="okay_wheel"> हुन्छ </string>
+<string id="sqr_wheel">Tyres that are not circular have edges that dig into the road which makes the movement unstable and uses excessive energy.</string>
+<string id="cutAxleResponse">Oh no !! Next time be aware of the axle cutters.</string>
+
 
 <!--
 &#xA; ===> for newline

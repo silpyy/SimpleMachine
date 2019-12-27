@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/inclineplane.unity
     guid: 3572d9a0db3949245bda3c5d79bc7c6b
+  - enabled: 1
+    path: Assets/Scenes/WheelRace.unity
+    guid: c920e32a0b95ae44686f32b30ee0413e
   m_configObjects: {}

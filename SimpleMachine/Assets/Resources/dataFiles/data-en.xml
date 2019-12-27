@@ -23,7 +23,7 @@
   <string id="lever_help"> F1: Load &#xA; F2: Applied force &#xA; Farther is the fulcrum from the force applied, Higher is the force experienced by the load. </string>
   <string id="lever_help_1"> Higher the weight on the effort side, higher is  the force experienced by the load.</string>
   <string id="lever_help_2"> Nearer the fulcrum from the load, higher is  the force experienced by the load.</string>
-  <string id="EndMsg"> Woo Hoo! You have completed the challenges. &#xA; The number of coins you collected is: </string>
+  <string id="EndMsg"> Woo Hoo! You have completed the challenges. </string>
   <string id="PondMessage">Uh oh! Try changing the position of fulcrum for load to experience more force.</string>
   <string id="birdKillMessage">Oh no! beware of the angry killer birds.</string>
   <string id="TreeMessage">Uh oh! How about using a bigger load to fly above the tree.</string>
@@ -46,13 +46,15 @@
 
   <!-- Wheel-->
   <string id="changeTyre">Try changing tyres with chains to get friction.</string>
-  <string id="WheelIntro">Change the tyre suitable for the track using up arrow (&#x2191;) and down arrow (&#x2193;) or scrolling the mouse wheel.
+
+  <string id="wheelIntro">
+    Change the tyre suitable for the track using up arrow (&#x2191;) and down arrow (&#x2193;) or scrolling the mouse wheel.
     Use right (&#x2192;) and  left arrows (&#x2190;) to move the vehicle.
   </string>
-  <string id="okay_wheel"> Okay_np</string>
-  <string id="sqr_wheel">Square shaped tyre has edges that dig into the road which makes the movement slower and uses excessive energy. So, select round tyres.</string>
 
-
+  <string id="okay_wheel"> हुन्छ </string>
+  <string id="sqr_wheel">Tyres that are not circular have edges that dig into the road which makes the movement unstable and uses excessive energy.</string>
+  <string id="cutAxleResponse">Oh no !! Next time be aware of the axle cutters.</string>
 
 
 </strings>

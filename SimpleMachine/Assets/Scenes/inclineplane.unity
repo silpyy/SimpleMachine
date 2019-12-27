@@ -406,7 +406,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24018564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -40.520897, y: -3.979359, z: -12}
+  m_LocalPosition: {x: -41.16944, y: -3.979359, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1522011734}
@@ -8735,7 +8735,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1522011733}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.28624725, y: -0.0000009536743, z: 0}
+  m_LocalPosition: {x: -0.17858887, y: -0.0000009536743, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1539060972}
@@ -13521,6 +13521,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8397087781564796371}
+  - component: {fileID: 9206118551127776465}
   m_Layer: 5
   m_Name: LevelPanelContainer
   m_TagString: Untagged
@@ -13528,3 +13529,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &9206118551127776465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9206118551127776464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7380cfb3f376e2844857d45e41e72a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
